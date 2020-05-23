@@ -1,15 +1,18 @@
 # MS3Coding
 
 Purpose:
-This repository holds the files of an application of MS3 Jr. Software Engineer coding challenge
+This repository holds the files of Darwin Charles Yadav's application of MS3 Jr. Software Engineer coding challenge
 
 Requirements:
 
-Important
+Important:
+
 The application takes about 25 seconds to run for the 5000+ data
 
 This application requires 3 opensource libraries
+
 These are attached in the application within the folder Dependencies.
+
 For the effective running of this application, include these libraries.
 1. opencsv
 2. sqlite-jdbc
@@ -23,7 +26,9 @@ Overview of approach, design choices, and assumptions:
 
 Assumptions: 
 5th Column - String object of image filename(Interpreted as string in the application)
+
 7th Column - String object to include the '$' sign in the database
+
 8th, 9th Column - Random Booleans named bool1, bool2 for convenience.
 
 Initially, the approach was to create a class of record that creates record objects
