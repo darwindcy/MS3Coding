@@ -32,13 +32,22 @@ Assumptions:
 8th, 9th Column - Random Booleans named bool1, bool2 for convenience.
 
 Initially, the approach was to create a class of record that creates record objects
-from the csv file. It later occurred that a this was unnecessary.
+from the csv file. It later occurred that a this was unnecessary. The class is still available for access.
 
 The application was first designed using scanner and filereader to read data and then split each line
-with ','. It worked for most part but the output was wrong since the image data has ',' within them.
-I resorted to using opencsv rather than writing more lines of code since it was simpler.
+with ','. It worked for most part but the output was incorrect since the image data has ',' within them which is the character used to split csv file data.
 
-Opencsv let me to split each row of data into a string array.
+In the end, opencsv was used rather than custsom writing functions to parse data since it was simpler.
+
+After a file is opened, 
+Opencsv allows splitting each row of data into a string array.
+
 The string array is checked for null/empty data and a row with 0 empty/null data is stored in the database.
+A database is created at the beginning when a file is about to be read. 
+
+Every creation of database searches for an existing database with the specified filename and deletes it.
+to avoid appending data to the old file.
+
 Conversely, the rows with 1+ null/empty data is stored in <filename-bad>.csv file.
-For each row of data, a tracker is used to count the total number of records, valid, and invalid records.
+For each row of data, a tracker is used to count the total number of records, valid, and invalid records which
+is stored in the log file at the end.
